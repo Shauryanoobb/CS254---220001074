@@ -1,0 +1,68 @@
+COMPLEXITY ANALYSIS OF LAB 2 
+220001074
+
+question 1-A
+time complexity:o(n+m)
+standard merge algorithm:algorithm just consists of traversing both the arrays using 2 pointers hence complexity will be sum of the lengths of both
+the arrays=>o(n+m)
+space complexity:o(n+m)
+An additional array is being used to store the sorted sequence of numbers hence space complexity is o(n+m)
+
+Question 1-B,1-C
+time complexity:O(n+m)
+Again , both the arrays need to be traversed , hence time complexity is O(n+m)
+space complexity:O(n+m)
+An additional array is being used to store the sorted sequence of numbers hence space complexity is o(n+m)
+
+Question 2 and question 3
+time complexity:O(n^2)//O(nlogn) (time complexity for question 2)
+if we use an algorith similar to the insertion sort,like the one used in the code,the time complexity in the worst case will be O(n^2)
+however is we use the quick select algorithm(the one used in quicksort where we partition the array) the time complexity for in place merge will be
+nlogn for merging 2 sorted arrays without using extra space.The whole problem arises from the fact that we cant use extra spacfe hence there is a 
+trade off between time and space complexity now.
+If this algorithm is used as the merge algorithm in the nect question
+the expression will look like this
+T(n)=2*T(n/2)+nlogn  //using algo similar to quicksort one
+solving this using masters theorem we get
+T(n)=nlogn*logn=n*(logn)^2;(time complexity for question 3)
+
+Question 4 
+The worst-case time complexity of QuickSelect is O(n^2), but the average and best-case time complexities are O(n). The worst-case scenario occurs when the pivot
+selection consistently results in unbalanced partitions, similar to the worst-case scenario in QuickSort.
+However, on average, the algorithm performs well and is efficient for finding the median.
+recurrence relation=>T(n)=T(n/2)+O(n)
+
+space complexity:
+The space complexity is determined by the recursion stack in the quickselect
+function. In the worst case, the recursion depth can be O(n), leading to a space
+complexity of O(n). However, on average, the recursion depth is logarithmic,
+resulting in an average-case space complexity of O(log n).
+In conclusion, the average time complexity of the code is O(n), and the
+average space complexity is O(log n).
+
+Question 5
+time complexity:O(n)
+The algo involves traversing through the array once/twice hence it will take linear time
+the question can be solved in multiple ways,in the first traversal the minimum elements index can be saved,and in the second traversal the minimum from the remaining elements can be founf
+hence it will take O(2*n)=O(n) time
+the extra space used is constant=> o(1) space complexity
+
+Question 6
+The provided quicksort code with the pivot as almost the median utilizes the
+median-of-three strategy to choose a good pivot. The median-of-three strategy
+helps mitigate the chances of selecting a bad pivot and improves the algorithm’s
+performance on partially sorted data.The main operations in the code are the partitioning step in the partition
+function and the recursive calls in the quicksort function. The use of the median-of-three strategy helps
+in reducing the likelihood of worst-case scenarios.
+
+The recurrence relation for the time complexity of quicksort is given by:
+T(n)=2T(n/2)+O(n);
+=>T(n)=O(nlogn)
+
+space complexity:
+The space complexity is determined by the recursion stack in the quicksort
+function. In the worst case, the recursion depth can be O(n), leading to a space
+complexity of O(n). However, on average, the recursion depth is logarithmic,
+resulting in an average-case space complexity of O(log n).
+In conclusion, the average time complexity of the code is O(n log n), and the
+average space complexity is O(log n).
