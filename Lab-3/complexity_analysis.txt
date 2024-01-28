@@ -1,0 +1,35 @@
+Q-1
+The time complexity of the Strassen algorithm can be analyzed as follows:
+• The recursive divide-and-conquer approach divides the matrices into sumatrices of size n/2×n/2. This division is performed recursively until the
+base case is reached, which has a size of 1.
+• At each level of recursion, a total of 7 multiplications of submatrices are
+performed, each involving matrices of size n/2 × n/2. This results in a
+total of O(n^log2(7)) multiplications.
+• Additionally, there are a total of 18 additions or subtractions of submtrices at each level of recursion.
+• Therefore, the time complexity of the Strassen algorithm is O(n^log2(7)) which is approximately O(n^2.81).
+
+space complexity:
+only extra space required is to manage the recursion stack and the space for submatrices
+
+
+Q-2
+thought process->
+    dp based approach
+
+    time complexity:o(n)
+    dp[n] gives the max subarray sum of the first n elements
+    2 possibilities ,either nth element is part of max subarray or it isnt
+    if it is not part of max subarray,then dp[n]=dp[n-1]
+    however ,if max subarray ends on the nth element,ie,it is a part of that max subarray,
+    then dp[n]=pre[n]-pre[(whichever index that gives the loewest value of pre(index))] ,since the second term is being subtracted we want to minimise it
+    hence dp[n] is max of both ie dp[n]=max(dp[n-1],pre[n]-pre[l]) where l is chosen such that pre[l] is the smallest value in pre array to the left of n
+    l can be precomputed hence it becomes an amortized o(1) operation
+    therefore total time complexity is o(n) as to calculate a particular dp state constant operations are performed
+    therefore to calculate dp[n] only a single for loop iteration is required 
+    =>o(n)
+
+    space complexity:o(n)
+    we need arrays for storing the prefix sums and the index of smallest prefix sum for each index
+    therefore space complexity =size of the array=o(n)
+
+
