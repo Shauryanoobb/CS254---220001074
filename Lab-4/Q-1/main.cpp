@@ -16,7 +16,7 @@ int _mergeSort(int arr[], int temp[], int left, int right)
 	int mid, inv_count = 0;
 	if (right > left) {
 		mid = (right + left) / 2;
-
+		//just a small change in merge sort code
 		inv_count += _mergeSort(arr, temp, left, mid);
 		inv_count += _mergeSort(arr, temp, mid + 1, right);
 

@@ -2,7 +2,8 @@
 using namespace std;
 #define ll long long
 #define ld long double
-
+//can also be solved by oredered set
+//focus on how many from array 1 do you need,array 2 se already determined
 double findMedianSortedArrays(vector<ll> &nums1, vector<ll> &nums2)
 {
     int n1 = nums1.size(), n2 = nums2.size();
@@ -16,11 +17,12 @@ double findMedianSortedArrays(vector<ll> &nums1, vector<ll> &nums2)
 
     while (low <= high)
     {
-        int mid1 = (low + high) >> 1;
+        int mid1 = (low + high) >> 1;//divided by 2
+        //mid gives chhote wale array se kitne elements select karne hai
         int mid2 = left - mid1;
 
         int l1 = INT_MIN, l2 = INT_MIN, r1 = INT_MAX, r2 = INT_MAX;
-
+        //mid 1 and mid2 should be in correct range
         if (mid1 < n1)
             r1 = nums1[mid1];
         if (mid2 < n2)
@@ -30,7 +32,7 @@ double findMedianSortedArrays(vector<ll> &nums1, vector<ll> &nums2)
         if (mid2 - 1 >= 0)
             l2 = nums2[mid2 - 1];
 
-        if (l1 <= r2 && l2 <= r1)
+        if (l1 <= r2 && l2 <= r1)//that condition which gives the correct split
         {
             if (n % 2 == 1)
                 return max(l1, l2);
