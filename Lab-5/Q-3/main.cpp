@@ -2,7 +2,7 @@
 using namespace std;
 
 const int NUM_VERTICES = 5;
-
+//o(v^2)
 bool isBipartiteUtil(int graph[][NUM_VERTICES], int src, int colorArr[]) {
 	colorArr[src] = 1;
 	queue<int> q;

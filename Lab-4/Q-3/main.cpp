@@ -56,3 +56,29 @@ int main()
     cout << ans << endl;
     return 0;
 }
+// #include<bits/stdc++.h>
+// #include<iostream>
+// using namespace std;
+// using ll=long long;
+
+// int main(){
+//     int n,k;
+//     cin>>n>>k;
+//     int a[n];
+//     for(int i=0;i<n;i++){
+//         cin>>a[i];
+//         a[i]=-a[i];
+//     }
+//     priority_queue<int> pq;
+//     for(int i=0;i<k;i++){
+//         pq.push(a[i]);
+//     }
+//     for(int i=k;i<n;i++){
+//         if(pq.top()>a[i]){
+//             pq.pop();
+//             pq.push(a[i]);
+//         }
+//     }
+//     cout<<-pq.top()<<endl;
+
+// }

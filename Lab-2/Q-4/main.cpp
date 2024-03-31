@@ -17,7 +17,7 @@ int quickselect(vector<int>& a, int l, int r, int k) {
         if(k > p) return quickselect(a, p+1, r, k);
         if(k == p) return a[k];
     }
-    if(l == k) return a[l];
+    if(l == k) return a[l];//whats the need?
     if(r == k) return a[r];
     return INT_MAX;
 }

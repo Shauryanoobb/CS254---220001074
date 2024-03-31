@@ -29,11 +29,10 @@ int play(int i,int j,vector<vector<int>> &a,vector<vector<int>> &moves){
         int curr_i,curr_j;
         curr_i=(x-1)/m;
         curr_j=(x-1)%m;
-        moves[i][j]=min(play(curr_i,curr_j,a,moves),moves[i][j]);
+        moves[i][j]=min(1+play(curr_i,curr_j,a,moves),moves[i][j]);
             cout<<i<<" "<<j<<endl;
             cout<<moves[i][j]<<endl;
     }
-    moves[i][j]++;
     return moves[i][j];
 
 }

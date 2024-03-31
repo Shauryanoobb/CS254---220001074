@@ -25,7 +25,7 @@ int main() {
     ifstream array_a("../../array_a.txt");
     while(array_a >> x) a.push_back(x);
     sort(a.begin(), a.end());
-	unique(a.begin(), a.end());
+	unique(a.begin(), a.end());//pehle hi sare repeating values nikal lo
     array_a.close();
    
     ifstream array_b("../../array_b.txt");
