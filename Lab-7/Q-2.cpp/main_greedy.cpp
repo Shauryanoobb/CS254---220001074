@@ -37,4 +37,4 @@ int main() {
 }
 
 
-// T.C. - O(n.log(n))
+// T.C. - O(n^2)
