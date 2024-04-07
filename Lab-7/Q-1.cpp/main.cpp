@@ -7,7 +7,7 @@ int main() {
     cin >> n >> WeightLimit;
     vector<int> weights(n), values(n);
     for (int i = 0; i < n; i++) {
-        cin >> values[i] >> weights[i];
+        cin >> values[i]>>weights[i];
     }
 
     vector<vector<int>> dp(n + 1, vector<int>(WeightLimit + 1, 0));

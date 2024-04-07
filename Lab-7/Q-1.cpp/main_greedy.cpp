@@ -39,10 +39,6 @@ int main()
             WeightLimit -= item.weight;
             totalValue += item.value;
         }
-        else
-        {
-            break;
-        }
     }
 
     cout << "Total value: " << totalValue << endl;
